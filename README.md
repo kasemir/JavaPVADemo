@@ -7,12 +7,12 @@ Building
 --------
 
 ```
-mvn verify
+mvn clean verify
 ```
 
-Running
--------
+Running from within VS Code
+---------------------------
 
-Invoke the `Step1...` code from within an IDE
-like Visual Studio Code.
-
+In Visual Studio Code with Java support,
+use File, Open Folder to open this project,
+then open the `Step1...` code and "Run".
