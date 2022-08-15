@@ -116,6 +116,12 @@ public class Step6Server
   *    EPICS_PVA_ADDR_LIST='[ff02::42:1]@lo0'  \
   *    pvxmonitor demo
   *
+  * 3) "lo" local interface may not support multicast, reach directly
+  *  
+  *    EPICS_PVA_AUTO_ADDR_LIST=no  \
+  *    EPICS_PVA_ADDR_LIST='[::1]'  \
+  *    pvxmonitor demo
+  *
   * 3) Start client for the TCP port
   *
   *    EPICS_PVA_AUTO_ADDR_LIST=no  \
