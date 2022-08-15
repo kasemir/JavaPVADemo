@@ -25,7 +25,7 @@ public class Step2Get
         (   PVAClient client = new PVAClient();
             PVAChannel channel = client.getChannel("ramp");
         )
-        {   // Adding timeout to the connection and 'get'
+        {   // Adding timeout to the connection and 'read'
             channel.connect().get(2, TimeUnit.SECONDS);
             PVAStructure data = channel.read("").get(2, TimeUnit.SECONDS);
 
@@ -38,5 +38,6 @@ public class Step2Get
 
             System.out.println(local + ": " + channel.getName() + " = " + value.getNumber());
         }
+        // channel and client are auto-close()'ed
     }
 }
