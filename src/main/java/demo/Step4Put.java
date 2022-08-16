@@ -22,12 +22,14 @@ public class Step4Put
         {
             channel.connect().get(2, TimeUnit.SECONDS);
 
+            System.out.println("Setting " + channel.getName() + " to faster count up to 100...");
             // Write the "value", which happens to be a string, as a plain string
             // Could similarly write scalar int or double as just 42 or 3.14
             channel.write("value", "A<100 ? A+2 : 0").get();
 
             TimeUnit.SECONDS.sleep(5);
 
+            System.out.println("Restoring " + channel.getName() + " to count by 1 to 10");
             // Alternatively, assuming a more complex structure, create that as PVA... data
             // PVAStructure data = new PVAStructure("data", "complex_type",
             //                                      new PVADouble("value", 3.14),
