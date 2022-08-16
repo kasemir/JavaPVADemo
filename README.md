@@ -4,6 +4,14 @@ JavaPVADemo
 Demo of Java PVA library (core-pva).
 
 
+Building
+--------
+
+```
+mvn clean verify
+```
+
+
 EPICS Base, PVA clients, Test IOC
 ---------------------------------
 
@@ -17,13 +25,6 @@ as well as the PVXS `pvxget` commands for
 testing `EPICS_PVA_NAME_SERVERS` and IPv7.
 
 
-Building
---------
-
-```
-mvn clean verify
-```
-
 Run from within VS Code
 -----------------------
 
@@ -34,6 +35,24 @@ then open the `Step1...` code and "Run".
 
 Run from Command Line
 ---------------------
+
+The core-pva jar file is actually executable and offers command line client access:
+
+```
+java -jar target/lib/core-pva-4.6.7.jar 
+USAGE: pvaclient info|get|monitor|put [options] <PV name>...
+
+Options:
+  -h             Help
+  -w <seconds>   Wait time, default is 5.0 seconds
+  -r <fields>    Field request. For 'info' command, optional field name
+                 Default 'value' for 'put', empty for other operations
+  -v <level>     Verbosity, level 0-5
+  --             End of options (to allow '-- put some_pv -100')
+
+For 'put', use <PV name> <value>
+```
+
 
 Configure the class path that the following `java ..` commands will use:
 ```
